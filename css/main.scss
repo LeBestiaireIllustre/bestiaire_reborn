@@ -19,7 +19,9 @@ $h1_size: $h2-size * $typo-multiplier;
 
 
 @import 'reset.scss';
-
+body {
+    color: $default-color;
+}
 %title {
     line-height: 1.05;
     padding-top: 0.4em;
@@ -73,5 +75,19 @@ header.site-header {
                 }
             }
         }
+    }
+}
+footer.site-footer {
+    padding: 2em;
+    text-align: center;
+    background-color: lightgrey;
+    p {
+        font-family: $menu-font;
+    }
+    a {
+        font-family: $menu-font;
+    }
+    span.glyphicon {
+        color: red;
     }
 }
