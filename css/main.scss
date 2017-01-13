@@ -1,10 +1,14 @@
 ---
 # Only the main Sass file needs front matter (the dashes are enough)
 ---
+@import url('https://fonts.googleapis.com/css?family=Abel');
 
 @import 'bootstrap.min.scss';
 $default-font-size: 16px;
 $default-font-family: "Georgia";
+$menu-font: "Abel";
+$default-color: black;
+
 
 $typo-multiplier: 1.333;
 
@@ -42,3 +46,32 @@ h4 {
     font-size: $h4-size;
 }
 
+header.site-header {
+    img#site-header-image {
+        max-width: 100%;
+    }
+    nav#site-nav {
+        text-align: center;
+        background-color: lightgrey;
+        //WARNING it seems that the header image as a white stripe at the bottom
+        margin-top: -0.2em;
+        ul {
+            li {
+                display: inline-block;
+                padding: 1em;
+                a {
+                    font-family: $menu-font;
+                    font-size: $h4-size;
+                    color: $default-color;
+                    text-decoration: none;
+                }
+                &:hover {
+                    background-color: black;
+                    a {
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+}
