@@ -6,5 +6,39 @@
 $default-font-size: 16px;
 $default-font-family: "Georgia";
 
+$typo-multiplier: 1.333;
+
+$h4_size: 1em * $typo-multiplier;
+$h3_size: $h4-size * $typo-multiplier;
+$h2_size: $h3-size * $typo-multiplier;
+$h1_size: $h2-size * $typo-multiplier;
+
+
 @import 'reset.scss';
+
+%title {
+    line-height: 1.05;
+    padding-top: 0.4em;
+    padding-bottom: 0.2em;
+}
+
+h1 {
+    @extend %title;
+    font-size: $h1-size;
+}
+
+h2 {
+    @extend %title;
+    font-size: $h2-size;
+}
+
+h3 {
+    @extend %title;
+    font-size: $h3-size;
+}
+
+h4 {
+    @extend %title;
+    font-size: $h4-size;
+}
 
