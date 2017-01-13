@@ -77,6 +77,21 @@ header.site-header {
         }
     }
 }
+
+div#side-bar {
+    * {
+        text-align: center;
+        font-family: $menu-font;
+    }
+    .side-bar-element {
+        padding: 3em;
+        padding-top: 2em;
+        padding-bottom: 2em;
+    }
+    img {
+        max-width: 75%;
+    }
+}
 footer.site-footer {
     padding: 2em;
     text-align: center;
