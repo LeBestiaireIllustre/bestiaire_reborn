@@ -1,4 +1,9 @@
-
+function show_menu() {
+    $('#mobile-overlay').show();    
+}
+function hide_menu() {
+    $('#mobile-overlay').hide();    
+}
 function isMobile() {
     return $(window).width <= 400 ;
 }
@@ -16,5 +21,11 @@ function toggle_sidebar() {
 
 
 $(document).ready(function () {
+    $('#menu-button').click(function (){
+        show_menu();
+    });
+    $('#mobile-overlay').click(function() {
+        hide_menu();
+    });
     toggle_sidebar();
 });

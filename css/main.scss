@@ -8,7 +8,7 @@ $default-font-size: 16px;
 $default-font-family: "Georgia";
 $menu-font: "Abel";
 $default-color: black;
-
+$overlay-color: rgba(0, 0, 0, 0.5);
 
 $typo-multiplier: 1.333;
 
@@ -90,6 +90,9 @@ header.site-header {
     button#menu-button {
         display: none;
     }
+    div#mobile-overlay {
+        display: none;
+    }
 }
 div#side-bar {
     * {
@@ -135,7 +138,15 @@ footer.site-footer {
             //WARNING position will be overwritten by javascript
             top: 2%;
             right: 2%;
-            
+        }
+        div#mobile-overlay {
+            position: absolute;
+            width: 100%;
+            height: 110%;
+            top: 0;
+            left: 0;
+            z-index: 10;
+            background-color: $overlay-color;
         }
     }
 }
