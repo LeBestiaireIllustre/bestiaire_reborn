@@ -93,6 +93,9 @@ header.site-header {
     div#mobile-overlay {
         display: none;
     }
+    div#mobile-menu-container {
+        display: none; 
+    }
 }
 div#side-bar {
     * {
@@ -148,5 +151,34 @@ footer.site-footer {
             z-index: 10;
             background-color: $overlay-color;
         }
+        div#mobile-menu-container {
+            display: block;
+            position: absolute;
+            z-index: 15;
+            top: 0px;
+            right: 0px;
+            width: 15.5em;
+            background-color: white;
+            box-shadow: 3px 3px 4px 5px #999999;
+            nav#site-nav {
+                background-color: transparent;
+                li {
+                    display: block;
+                    text-align: right;
+                    padding-left: 0.2em;
+                }
+            }
+            div#side-bar {
+                .side-bar-element {
+                    padding: 1em;
+                    padding-top: 2em;
+                    padding-bottom: 2em;
+                }
+            }
+        }
+    }
+    div.page-content {
+        //WARNING will be overitten by javascript
+        padding-top: 4em;
     }
 }
