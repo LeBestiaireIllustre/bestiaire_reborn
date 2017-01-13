@@ -22,6 +22,16 @@ $h1_size: $h2-size * $typo-multiplier;
 body {
     color: $default-color;
 }
+
+//Fix for the y overflow issue
+.container-fluid 
+{
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
 %title {
     line-height: 1.05;
     padding-top: 0.4em;
@@ -76,8 +86,11 @@ header.site-header {
             }
         }
     }
-}
 
+    button#menu-button {
+        display: none;
+    }
+}
 div#side-bar {
     * {
         text-align: center;
@@ -92,6 +105,7 @@ div#side-bar {
         max-width: 75%;
     }
 }
+
 footer.site-footer {
     padding: 2em;
     text-align: center;
@@ -104,5 +118,24 @@ footer.site-footer {
     }
     span.glyphicon {
         color: red;
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+    header.site-header {
+        * {
+            z-index: 5;
+        }
+        img#site-header-image {
+            position: fixed;
+        }
+        button#menu-button {
+            display: block;
+            position: absolute;
+            //WARNING position will be overwritten by javascript
+            top: 2%;
+            right: 2%;
+            
+        }
     }
 }
