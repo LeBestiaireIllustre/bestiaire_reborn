@@ -4,6 +4,8 @@
 @import url('https://fonts.googleapis.com/css?family=Abel');
 
 @import 'bootstrap.min.scss';
+$mobile-min-width: 320px;
+$mobile-max-width: 640px;
 $default-font-size: 16px;
 $default-font-family: "Georgia";
 $menu-font: "Abel";
@@ -19,10 +21,6 @@ $h1_size: $h2-size * $typo-multiplier;
 
 
 @import 'reset.scss';
-.noscroll {
-    overflow-y: hidden;
-    height: 100%;
-}
 body {
     color: $default-color;
     overflow-x: hidden;
@@ -91,16 +89,6 @@ header.site-header {
             }
         }
     }
-
-    button#menu-button {
-        display: none;
-    }
-    div#mobile-overlay {
-        display: none;
-    }
-    div#mobile-menu-container {
-        display: none; 
-    }
 }
 div#side-bar {
     * {
@@ -132,64 +120,4 @@ footer.site-footer {
     }
 }
 
-$mobile-menu-width: 15.5em;
-@media screen and (min-width: 320px) and (max-width: 640px) {
-    header.site-header {
-        img#site-header-image {
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: -1;
-        }
-        div#button-container {
-            text-align: right;
-            vertical-align: middle;
-            padding: 3vw;
-            button#menu-button {
-                display: inline-block;
-                border: none;
-                color: white;
-                background-color: transparent;
-                span.glyphicon {
-                    font-size: 9vw;
-                }
-            }
-        }
-        div#mobile-overlay {
-            position: fixed;
-            width: 100%;
-            height: 110%;
-            top: 0;
-            left: 0;
-            z-index: 10;
-            background-color: $overlay-color;
-        }
-        div#mobile-menu-container {
-            display: block;
-            position: fixed;
-            z-index: 15;
-            top: 0px;
-            right: -$mobile-menu-width;
-            width: $mobile-menu-width;
-            height: 100%;
-            background-color: white;
-            box-shadow: 3px 3px 4px 5px #999999;
-            overflow-y: scroll;
-            nav#site-nav {
-                background-color: transparent;
-                li {
-                    display: block;
-                    text-align: right;
-                    padding-left: 0.1em;
-                }
-            }
-            div#side-bar {
-                .side-bar-element {
-                    padding: 1em;
-                    padding-top: 2em;
-                    padding-bottom: 2em;
-                }
-            }
-        }
-    }
-}
+@import 'mobile-side-panel.scss'
