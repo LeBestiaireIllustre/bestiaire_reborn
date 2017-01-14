@@ -62,6 +62,9 @@ h4 {
 }
 
 header.site-header {
+    a {
+        height: 0;
+    }
     img#site-header-image {
         max-width: 100%;
     }
@@ -109,10 +112,7 @@ footer.site-footer {
     padding: 2em;
     text-align: center;
     background-color: lightgrey;
-    p {
-        font-family: $menu-font;
-    }
-    a {
+    a, p {
         font-family: $menu-font;
     }
     span.glyphicon {
@@ -120,4 +120,34 @@ footer.site-footer {
     }
 }
 
-@import 'mobile-side-panel.scss'
+@import 'mobile-side-panel.scss';
+
+
+
+div.about {
+    .text-container {
+        padding: 2em;
+        %textty {
+            font-family: "Helvetica";
+            font-weight: bold;
+            color: white;
+        }
+        span {
+            @extend %textty;
+            font-size: 1em;
+        }
+        p {
+            @extend %textty;
+            line-height: 1.11;
+            font-size: $h3-size;
+            padding-top: 0.2em;
+            padding-bottom: 0.2em;
+            text-align: center;
+            text-shadow: 2px 0 0 black, -2px 0 0 black, 0 2px 0 black, 0 -2px 0 black, 1px 1px black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
+        }
+    }
+    #first {
+        background-image: url('../images/about-cover.jpg');
+    }
+    margin-top: -0.1em;
+}
