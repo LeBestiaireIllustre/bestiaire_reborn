@@ -1,4 +1,6 @@
 ---
 layout: default-side-bar-invisible-on-desktop
 ---
-<h1>Le bestiaire</h1>
+{% for elem in site.data.data.key %}
+  <h1>{{ elem }}</h1>
+{% endfor %}
