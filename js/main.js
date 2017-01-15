@@ -40,6 +40,13 @@ $(document).ready(function () {
     $('#mobile-overlay').click(function() {
         hide_menu();
     });
-    
+    $('div.bestiaire img').hover(
+            function(){
+                $('#mobile-overlay').css({'z-index': '2'});
+                $('#mobile-overlay').show();
+            }, 
+            function(){
+                $('#mobile-overlay').hide();
+            });    
     toggle_sidebar();
 });

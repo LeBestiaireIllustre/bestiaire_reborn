@@ -12,6 +12,13 @@ header.site-header {
     
     div#mobile-overlay {
         display: none;
+        position: fixed;
+        width: 100%;
+        height: 110%;
+        top: 0;
+        left: 0;
+        z-index: 10;
+        background-color: $overlay-color;
     }
     
     div#mobile-menu-container {
@@ -42,15 +49,6 @@ header.site-header {
                     font-size: 9vw;
                 }
             }
-        }
-        div#mobile-overlay {
-            position: fixed;
-            width: 100%;
-            height: 110%;
-            top: 0;
-            left: 0;
-            z-index: 10;
-            background-color: $overlay-color;
         }
         div#mobile-menu-container {
             display: block;
