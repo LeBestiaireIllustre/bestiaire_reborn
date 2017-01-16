@@ -34,15 +34,15 @@ header.site-header {
             position: absolute;
             top: 0;
             left: 0;
-            z-index: -1;
         }
         div#button-container {
             text-align: right;
             vertical-align: middle;
             padding: 3vw;
-            button#menu-button {
+            #menu-button {
                 display: inline-block;
                 border: none;
+                z-index: 9;
                 color: white;
                 background-color: transparent;
                 span.glyphicon {
