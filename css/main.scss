@@ -7,8 +7,8 @@
 $mobile-min-width: 320px;
 $mobile-max-width: 640px;
 $default-font-size: 16px;
-$default-font-family: "Georgia";
-$menu-font: "Abel";
+$default-font-family: 'Georgia';
+$menu-font: 'Abel';
 $default-color: black;
 $overlay-color: rgba(0, 0, 0, 0.8);
 
@@ -157,9 +157,24 @@ div.bestiaire {
         padding: 0;
         border: none;
     }
-    div.image-container {
+    div.image-container.left {
         position: relative;
         width: 250%;
+        a.bestiaire-link {
+            img {
+                display: block;
+                max-width: 42%;
+                background-color: white;
+                transition: all .4s ease-in-out;
+                &:hover {
+                    transform: scale(1.25);
+                    z-index: 15;
+                }
+            }
+            &:hover + div.hovering-text {
+                display: block;
+            }
+        }
         div.hovering-text {
             display: none;
             color: white;
@@ -180,7 +195,21 @@ div.bestiaire {
                 word-spacing: 0.01em;
             }
         }
+    }
+    div.image-container.right {
+        -ms-box-orient: horizontal;
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -moz-flex;
+        display: -webkit-flex;
+        display: flex;            
+        -webkit-flex-flow: row wrap;
+        flex-flow: row wrap;
+        position: relative;
+        width: 250%;
         a.bestiaire-link {
+            order: 2;
             img {
                 display: block;
                 max-width: 42%;
@@ -195,5 +224,26 @@ div.bestiaire {
                 display: block;
             }
         }
+        div.hovering-text {
+            order: 1;
+            display: none;
+            color: white;
+            position: absolute;
+            top: 0px;
+            left: -27em;
+            z-index: 15;
+            max-width: 42%;
+            h1 {
+                font-size: 5.063em;
+            }
+            h2 {
+                font-size: 3.375em;
+            }
+            p {
+                text-align: justify;
+                font-size: 1.5em;
+                word-spacing: 0.01em;
+            }
+        } 
     }
 }

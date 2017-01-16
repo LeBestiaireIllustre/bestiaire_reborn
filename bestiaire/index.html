@@ -6,8 +6,8 @@ layout: default-side-bar-invisible-on-desktop
 <div class="bestiaire row">
   {% for column in columns %}
   <div class="col-xs-{{ 12 | divided_by: column_count }}">
-    {% for element in column %}
-    <div class="image-container">
+    {% for element in column.images %}
+    <div class="image-container {{ column.positioning }}">
       <a href="#!" class="bestiaire-link">
         <img alt="{{ element.title }}" src="{{ site.url }}/images/bestiaire/{{ element.file }}" />
       </a>
