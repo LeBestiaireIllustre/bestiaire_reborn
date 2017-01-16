@@ -180,7 +180,7 @@ div.bestiaire {
             color: white;
             position: absolute;
             top: 0px;
-            right: 4em;
+            right: 4vw;
             z-index: 15;
             max-width: 42%;
             h1 {
@@ -197,7 +197,7 @@ div.bestiaire {
         }
         &.right {
             div.hovering-text {
-                left: -27em;
+                left: -32vw;
             }
         }
         div.modal {
