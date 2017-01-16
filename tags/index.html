@@ -1,0 +1,19 @@
+---
+layout: default-side-bar
+---
+<div class="tags">
+    {% assign rows = (site.tags | sort | gridify) %}
+    {% for row in rows %}
+    <div class="row">
+      {% for tag in row %}
+      <div class="col-xs-12 col-md-{{ tag | last }}" style="text-align: center">
+            <h4>
+              <a href="{{ site.url }}/tags/{{ tag | first | to_url}}">
+                <span class="label label-default">{{ tag | first }}</span>
+              </a>
+            </h4>
+          </div>
+      {% endfor %}
+    </div>
+    {% endfor %}
+</div>
