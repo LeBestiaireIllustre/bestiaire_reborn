@@ -40,9 +40,8 @@ $(document).ready(function () {
     $('#mobile-overlay').click(function() {
         hide_menu();
     });
-    $('div.bestiaire img').hover(
+    $('div.bestiaire img.bestiaire-image').hover(
             function(){
-                $('#mobile-overlay').css({'z-index': '2'});
                 $('#mobile-overlay').show();
             }, 
             function(){
