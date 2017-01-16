@@ -8,7 +8,16 @@ layout: default-side-bar-invisible-on-desktop
   <div class="col-xs-{{ 12 | divided_by: column_count }}">
     {% for element in column %}
     <div class="image-container">
-      <img alt="{{ element.title }}" src="{{ site.url }}/images/bestiaire/{{ element.file }}" />
+      <a href="#!" class="bestiaire-link">
+        <img alt="{{ element.title }}" src="{{ site.url }}/images/bestiaire/{{ element.file }}" />
+      </a>
+      <div id="hovering-text-{{ element.letter }}" class="hovering-text">
+        <h1>{{ element.letter }}</h1>
+        <h2>{{ element.title }}</h2>
+        <div>
+          {{ element.description | truncatewords: 50, '...' }}
+        </div>
+      </div>
     </div>
     {% endfor %}
   </div>
