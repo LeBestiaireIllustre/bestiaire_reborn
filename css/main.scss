@@ -144,12 +144,21 @@ div.about {
             text-align: center;
             text-shadow: 2px 0 0 black, -2px 0 0 black, 0 2px 0 black, 0 -2px 0 black, 1px 1px black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
         }
+        @media screen and (min-width: $mobile-min-width)
+            and (max-width: $mobile-max-width) {
+                
+                p {
+                    font-size: 1.2em;
+                    padding: 0;
+                }
+            }
     }
     #first {
         background-image: url('../images/about-cover.jpg');
     }
     margin-top: -0.1em;
 }
+
 div.bestiaire {
     padding-bottom: 1em;
     * {
