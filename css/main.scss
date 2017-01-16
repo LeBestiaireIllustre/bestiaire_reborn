@@ -120,7 +120,7 @@ footer.site-footer {
 }
 
 @import 'mobile-side-panel.scss';
-
+@import 'bestiaire.scss';
 
 
 div.about {
@@ -157,109 +157,4 @@ div.about {
         background-image: url('../images/about-cover.jpg');
     }
     margin-top: -0.1em;
-}
-
-div.bestiaire {
-    padding-bottom: 1em;
-    * {
-        margin: 0;
-        padding: 0;
-        border: none;
-    }
-    div.image-container {
-        position: relative;
-        width: 250%;
-        a.bestiaire-link {
-            img.bestiaire-image {
-                display: block;
-                max-width: 42%;
-                background-color: white;
-                transition: all .4s ease-in-out;
-                &:hover {
-                    transform: scale(1.25);
-                    z-index: 15;
-                }
-            }
-            &:hover + div.hovering-text {
-                display: block;
-            }
-        }
-        div.hovering-text {
-            display: none;
-            color: white;
-            position: absolute;
-            top: 0px;
-            right: 4vw;
-            z-index: 15;
-            max-width: 42%;
-            h1 {
-                font-size: 5.063em;
-            }
-            h2 {
-                font-size: 3.375em;
-            }
-            p {
-                text-align: justify;
-                font-size: 1.5em;
-                word-spacing: 0.01em;
-            }
-        }
-        &.right {
-            div.hovering-text {
-                left: -32vw;
-            }
-        }
-        div.modal {
-            * {
-                border-radius: 0;
-            }
-            .modal-dialog {
-                width: 80%;
-                left: 10vw;
-                padding: 1em;
-                    
-                @media screen and (min-width: $mobile-min-width)
-                and (max-width: $mobile-max-width) {
-                    width: 100%;
-                    left:0;
-                    top:0;
-                    padding: 0;
-                }
-
-                .modal-header {
-                    padding: 0.9em;
-                    padding-top: 0.2em;
-                    padding-bottom: 0.2em;
-                    
-                }
-                .modal-footer {
-                    padding: 1em;
-                }
-                .modal-image{
-                    text-align: center;
-                    padding: 1em;
-                    img {
-                        max-width: 100%;
-                    }
-                }
-                .modal-text {
-                    padding: 2em;
-                    overflow-y: scroll;
-                    max-height: 33vw;
-                    @media screen and (min-width: $mobile-min-width)
-                    and (max-width: $mobile-max-width) {
-                        height: 100%;
-                        max-height: 100%;
-                        overflow-y: visible;
-                    }
-                    p {
-                        text-align: justify;
-                        line-height: 1.1;
-                        padding-bottom: 0.8em;
-                    }
-                }
-            }
-        }
-    }
-         
 }
