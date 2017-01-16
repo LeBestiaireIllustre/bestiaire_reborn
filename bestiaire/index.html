@@ -8,8 +8,8 @@ layout: default-side-bar-invisible-on-desktop
   <div class="col-xs-{{ 12 | divided_by: column_count }}">
     {% for element in column.images %}
     <div class="image-container {{ column.positioning }}">
-      <a href="#!" class="bestiaire-link">
-        <img alt="{{ element.title }}" src="{{ site.url }}/images/bestiaire/{{ element.file }}" />
+      <a href="#!" data-toggle="modal" data-target="#click-modal-{{ element.letter }}" class="bestiaire-link">
+        <img class="bestiaire-image" alt="{{ element.title }}" src="{{ site.url }}/images/bestiaire/{{ element.file }}" />
       </a>
       <div id="hovering-text-{{ element.letter }}" class="hovering-text">
         <h1>{{ element.letter }}</h1>
@@ -18,6 +18,34 @@ layout: default-side-bar-invisible-on-desktop
           {{ element.description | truncatewords: 50, '...' }}
         </div>
       </div>
+      
+      <div class="modal fade" id="click-modal-{{ element.letter }}" tabindex="-1" role="dialog" aria-labelledby="click-modalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h2 class="modal-title">{{ element.letter }} &mdash; {{ element.title }}</h2>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-md-4 modal-image">
+                  <a href="{{ site.url }}/images/bestiaire/{{ element.file }}">
+                    <img src="{{ site.url }}/images/bestiaire/{{ element.file }}"/>
+                  </a>
+                </div>
+                <div class="col-md-8 modal-text">
+                  <div class="description">
+                    {{ element.description }}
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
     {% endfor %}
   </div>
