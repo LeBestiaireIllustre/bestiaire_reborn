@@ -121,40 +121,4 @@ footer.site-footer {
 
 @import 'mobile-side-panel.scss';
 @import 'bestiaire.scss';
-
-
-div.about {
-    .text-container {
-        padding: 2em;
-        %textty {
-            font-family: "Helvetica";
-            font-weight: bold;
-            color: white;
-        }
-        span {
-            @extend %textty;
-            font-size: 1em;
-        }
-        p {
-            @extend %textty;
-            line-height: 1.11;
-            font-size: $h3-size;
-            padding-top: 0.2em;
-            padding-bottom: 0.2em;
-            text-align: center;
-            text-shadow: 2px 0 0 black, -2px 0 0 black, 0 2px 0 black, 0 -2px 0 black, 1px 1px black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
-        }
-        @media screen and (min-width: $mobile-min-width)
-            and (max-width: $mobile-max-width) {
-                
-                p {
-                    font-size: 1.2em;
-                    padding: 0;
-                }
-            }
-    }
-    #first {
-        background-image: url('../images/about-cover.jpg');
-    }
-    margin-top: -0.1em;
-}
+@import 'about.scss';
