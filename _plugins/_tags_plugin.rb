@@ -55,7 +55,7 @@ module Jekyll
       @dir = dir
       @name = 'index.html'
       self.process(@name)
-      self.read_yaml(File.join(base, '_layouts'), 'tag_page.html')
+      self.read_yaml(File.join(base, '_layouts'), 'tag-page.html')
       self.data['tag'] = tag
       tag_title_prefix = site.config['tag_title_prefix'] || 'Posts Tagged '
       tag_title_suffix = site.config['tag_title_suffix'] || ''
