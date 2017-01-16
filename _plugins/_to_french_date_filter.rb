@@ -1,7 +1,6 @@
 module Jekyll
     module FrenchDateFilter
         def to_french_date(date)
-            puts 'kablam'
             months = ['Janvier','Février','Mars','Avril','Mai','Juin',
             'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre']
             elems = date.split('-')
