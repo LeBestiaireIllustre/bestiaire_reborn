@@ -3,7 +3,12 @@
     <a href="{{ include.post_arg.url | prepend: site.url }}">
       <h1 class="post-title" itemprop="name headline">{{ include.post_arg.title }}</h1>
     </a>
-    <p class="post-meta"><time datetime="{{ include.post_arg.date | date_to_xmlschema }}" itemprop="datePublished">{{ include.post_arg.date | date: "%b %-d, %Y" }}</time>{% if include.post_arg.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ include.post_arg.author }}</span></span>{% endif %}</p>
+    <p class="post-meta"><time datetime="{{ include.post_arg.date | date_to_xmlschema }}" itemprop="datePublished">{{ include.post_arg.date | date: "%d-%m-%Y" | to_french_date }}</time></p>
+    <div class="tags">
+      {% for tag in include.post_arg.tags %}
+        {% include tag_part.html tag_arg=tag %}
+      {% endfor %}
+    </div>
   </header>
 
   <div class="post-content" itemprop="articleBody">

@@ -7,12 +7,9 @@ layout: default-side-bar
     <div class="row">
       {% for tag in row %}
       <div class="col-xs-12 col-md-{{ tag | last }}" style="text-align: center">
-            <h4>
-              <a href="{{ site.url }}/tags/{{ tag | first | to_url}}">
-                <span class="label label-default">{{ tag | first }}</span>
-              </a>
-            </h4>
-          </div>
+        {% assign actual = (tag | first) %}
+          {% include tag_part.html tag_arg=actual %}      
+      </div>
       {% endfor %}
     </div>
     {% endfor %}

@@ -1,0 +1,4 @@
+{% assign tag_arg = include.tag_arg %}
+<a class="tag" href="{{ site.url }}/tags/{{ tag_arg | to_url }}">
+  <h4><span class="label label-default tag">{{ tag_arg }}</span></h4>
+</a>
