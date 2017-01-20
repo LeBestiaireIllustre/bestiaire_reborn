@@ -1,14 +1,12 @@
 ---
 # Only the main Sass file needs front matter (the dashes are enough)
 ---
-@import url('https://fonts.googleapis.com/css?family=Abel');
+@import url('https://fonts.googleapis.com/css?family=Abel|Open+Sans');
 
 @import 'bootstrap.min.scss';
 $mobile-min-width: 320px;
 $mobile-max-width: 640px;
 $default-font-size: 16px;
-$default-font-family: 'Georgia';
-$menu-font: 'Abel';
 $default-color: black;
 $overlay-color: rgba(0, 0, 0, 0.8);
 
@@ -19,7 +17,13 @@ $h3_size: $h4-size * $typo-multiplier;
 $h2_size: $h3-size * $typo-multiplier;
 $h1_size: $h2-size * $typo-multiplier;
 
-$main-content-padding: 3em;
+$default-font-family: 'Open Sans';
+$menu-font: 'Abel';
+$about-font: 'Helvetica';
+$bestiaire-hovering-text-font: 'Abel';
+$title-font: 'Open Sans';
+$headline-font: 'Open Sans';
+
 @import 'reset.scss';
 body {
     color: $default-color;
@@ -99,7 +103,7 @@ div#side-bar {
         font-family: $menu-font;
     }
     .side-bar-element {
-        padding: $main-content-padding;
+        padding: 3em;
         padding-top: 2em;
         padding-bottom: 2em;
     }

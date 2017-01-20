@@ -33,14 +33,17 @@ div.bestiaire {
             max-width: 42%;
             h1 {
                 font-size: 5.063em;
+                font-family: $bestiaire-hovering-text-font;
             }
             h2 {
                 font-size: 3.375em;
+                font-family: $bestiaire-hovering-text-font;
             }
             p {
                 text-align: justify;
                 font-size: 1.5em;
                 word-spacing: 0.01em;
+                font-family: $bestiaire-hovering-text-font;
             }
         }
         &.right {
