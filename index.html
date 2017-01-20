@@ -1,20 +1,8 @@
 ---
 layout: default-side-bar
 ---
-<h1>Kablam</h1>
-<h1>Kablam</h1>
-<h1>Kablam</h1>
-<h1>Kablam</h1>
-<h1>Kablam</h1>
-<h1>Kablam</h1>
-<h1>Kablam</h1>
-<h1>Kablam</h1>
-<h1>Kablam</h1>
-<h1>Kablam</h1>
-<h1>Kablam</h1>
-<h1>Kablam</h1>
-<h1>Kablam</h1>
-<h1>Kablam</h1>
-<h1>Kablam</h1>
-<h1>Kablam</h1>
-<h1>Kablam</h1>
+<div class="front">
+  {% for post in site.posts limit:3 %}
+    {% include post.html post_arg=post%}
+  {% endfor %}
+</div>

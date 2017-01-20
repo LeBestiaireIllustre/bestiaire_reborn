@@ -66,7 +66,7 @@ module Jekyll
   class TagGenerator < Generator
     safe true
     def generate(site)
-      if site.layouts.key? 'tag_page'
+      if site.layouts.key? 'tag-page'
         dir = site.config['tag_dir'] || 'tags'
         site.tags.keys.each do |tag|
           write_tag_index(site, File.join(dir, Jekyll::UrlFriendlyFilter::to_url_friendly(tag)), tag)
