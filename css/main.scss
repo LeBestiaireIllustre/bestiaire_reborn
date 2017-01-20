@@ -72,6 +72,7 @@ a.tag {
     }
     h4 {
         display: inline-block;
+        font-size: 1em;
     }
     span {
         background-color: black;
@@ -206,6 +207,19 @@ article.post {
             padding-bottom: 1em;
             line-height: 1.3;
         }
+        blockquote {
+            padding: 1em;
+            p {
+                font-family: $blockquote-font;
+                font-size: 1.2em;
+                text-align: left;
+                font-style: italic;
+                padding: 0.1em;
+            }
+            p.credit {
+                text-align: right;
+            }
+        }
         .element-caption {
             position: relative;
             text-align: center;
@@ -262,7 +276,19 @@ article.post {
         }
     }
     footer.post-footer {
-    
+        background-color: black;
+        color: white;
+        padding: 1em;
+        a {
+            color: grey;
+        }
+        div {
+            text-align: center;
+            padding: 0.4em;
+            span.glyphicon {
+                color: red;
+            }
+        }
     }
 }
 
