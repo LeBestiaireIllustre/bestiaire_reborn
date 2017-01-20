@@ -1,0 +1,17 @@
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <a href="{{ include.post_arg.url | prepend: site.url }}">
+      <h1 class="post-title" itemprop="name headline">{{ include.post_arg.title }}</h1>
+    </a>
+    <p class="post-meta"><time datetime="{{ include.post_arg.date | date_to_xmlschema }}" itemprop="datePublished">{{ include.post_arg.date | date: "%b %-d, %Y" }}</time>{% if include.post_arg.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ include.post_arg.author }}</span></span>{% endif %}</p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    {{ content }}
+  </div>
+  
+  <footer class="post-footer">
+     
+  </footer>
+
+</article>
