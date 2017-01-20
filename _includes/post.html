@@ -3,7 +3,9 @@
     <a href="{{ include.post_arg.url | prepend: site.url }}">
       <h1 class="post-title" itemprop="name headline">{{ include.post_arg.title }}</h1>
     </a>
-    <p class="post-meta"><time datetime="{{ include.post_arg.date | date_to_xmlschema }}" itemprop="datePublished">{{ include.post_arg.date | date: "%d-%m-%Y" | to_french_date }}</time></p>
+    <p class="post-meta">
+      {% include date_part.html date_arg=include.post_arg.date %}
+    </p>
     <div class="tags">
       {% for tag in include.post_arg.tags %}
         {% include tag_part.html tag_arg=tag %}

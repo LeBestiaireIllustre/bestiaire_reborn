@@ -5,10 +5,7 @@ layout: default-side-bar
   <ul>
     {% for post in site.posts %}
     <li>
-        <span class="glyphicon glyphicon-time"></span>
-        <time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">
-          {{ post.date | date: "%d-%m-%Y" | to_french_date }}
-      </time>
+        {% include date_part.html date_arg=post.date%}
         <a href="{{ post.url | prepend: site.baseurl }}"><h2>{{ post.title }}</h2></a>
     </li>
     {% endfor %}
