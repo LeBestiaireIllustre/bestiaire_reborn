@@ -14,3 +14,6 @@ url: "" # the base hostname & protocol for your site
 
 # Build settings
 markdown: kramdown
+
+sass:
+    style: compressed
