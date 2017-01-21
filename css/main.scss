@@ -70,6 +70,7 @@ h4 {
     @extend %title;
     font-size: $h4-size;
 }
+
 a.tag {
 
     text-decoration:none;
@@ -83,6 +84,7 @@ a.tag {
     span {
         background-color: black;
         font-family: $default-font;
+        border-radius: 0;
     }
 }
 
@@ -121,6 +123,18 @@ header.site-header {
 div.page-content {
     padding-top: 1vw;
     padding-bottom: 1vw;
+}
+%headline {
+    font-family: $menu-font;
+    text-align: center;
+    background-color: black;
+    color: white;
+}
+h1.category-headline {
+    @extend %headline;
+}
+h1.tag-headline {
+    @extend %headline;
 }
 div#side-bar {
     * {

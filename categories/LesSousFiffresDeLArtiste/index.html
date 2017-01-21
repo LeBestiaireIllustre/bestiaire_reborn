@@ -2,7 +2,7 @@
 layout: default-side-bar
 ---
 <div class="category">
-  <h1>Les Sous Fiffres de l'artiste</h1>
+  <h1 class="category-headline">Les Sous Fiffres de l'artiste</h1>
   {% for post in site.posts%}
     {% if post.custom-categories contains "LesSousFiffresDeLArtiste" %}
       {% include post.html post_arg=post %}

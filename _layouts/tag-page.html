@@ -3,7 +3,7 @@ layout: default-side-bar
 ---
 {% assign current_tag = page.tag %}
 <div class="tag">
-  <h1>{{ current_tag }}</h1>
+  <h1 class="tag-headline">{{ current_tag }}</h1>
   {% for post in site.posts %}
     {% if post.tags contains current_tag %}
       {% include post.html post_arg=post %}
