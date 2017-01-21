@@ -114,6 +114,10 @@ header.site-header {
         max-width: 100%;
     }
     nav#site-nav {
+        @include on-mobile() {
+            //Will be displayed by script
+            display: none;
+        }
         text-align: center;
         background-color: grey;
         //WARNING it seems that the header image as a white stripe at the bottom
