@@ -4,6 +4,5 @@ layout: default-side-bar
 <div class="front">
   {% for post in site.posts limit:3 %}
     {% include post.html post_arg=post%}
-    <hr/>
   {% endfor %}
 </div>

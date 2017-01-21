@@ -7,7 +7,6 @@ layout: default-side-bar
   {% for post in site.posts %}
     {% if post.custom-categories contains "IllustrationsIllustres" %}
       {% include post.html post_arg=post %}
-      <hr/>
     {% endif %}
   {% endfor %}
 </div>
