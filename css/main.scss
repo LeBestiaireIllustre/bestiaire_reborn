@@ -24,6 +24,12 @@ $bestiaire-hovering-text-font: 'Abel';
 $title-font: 'PT Sans Narrow';
 $headline-font: 'Anton';
 
+@mixin on-mobile() {
+    @media screen and (min-width: $mobile-min-width) and (max-width: $mobile-max-width) {
+        @content;
+    }
+}
+
 @import 'reset.scss';
 body {
     color: $default-color;
@@ -112,6 +118,10 @@ header.site-header {
         }
     }
 }
+div.page-content {
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+}
 div#side-bar {
     * {
         text-align: center;
@@ -142,14 +152,8 @@ footer.site-footer {
 @import 'mobile-side-panel.scss';
 @import 'bestiaire.scss';
 
-@mixin on-mobile() {
-    @media screen and (min-width: $mobile-min-width) and (max-width: $mobile-max-width) {
-        @content;
-    }
-}
 
 div.archives {
-    padding-top: 3vw;
     ul {
         padding: 0.5em;
         li {
@@ -163,7 +167,7 @@ div.archives {
                 }
                 h2 {
                     padding: 0.1em;
-                    @media screen and (min-width: $mobile-min-width) and (max-width: $mobile-max-width) {
+                    @include on-mobile() {
                         font-size: $h4-size;
                     }
                 }
@@ -171,6 +175,10 @@ div.archives {
 
         }
     }
+}
+
+div.tags-page {
+    padding-top: 1em;
 }
 $caption-font: 'PT Sans Narrow';
 $blockquote-font: 'Times New Roman';

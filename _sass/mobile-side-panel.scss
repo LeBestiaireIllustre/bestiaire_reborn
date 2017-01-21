@@ -26,9 +26,7 @@ header.site-header {
     }
 }
 
-@media screen 
-    and (min-width: $mobile-min-width) 
-    and (max-width: $mobile-max-width) {
+@include on-mobile() {
     header.site-header {
         img#site-header-image {
             position: absolute;
@@ -72,8 +70,6 @@ header.site-header {
             div#side-bar {
                 .side-bar-element {
                     padding: 1em;
-                    padding-top: 2em;
-                    padding-bottom: 2em;
                 }
             }
         }
