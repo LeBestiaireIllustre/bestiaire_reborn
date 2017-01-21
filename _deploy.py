@@ -2,8 +2,10 @@
 import os
 import re
 import time
+import jsmin
 import subprocess
 BASE_URL = 'http://site.lebestiaireillustre.com'
+
 def write_domain_name():
     with open('_config.yml') as f:
         content = f.read()

@@ -11,9 +11,15 @@ description: > # this means to ignore newlines until "baseurl:"
     Description du bestiaire
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site
-
 # Build settings
 markdown: kramdown
-
+gem:
+    - uglifier
 sass:
     style: compressed
+
+js_minifier:
+    main: 'js/main.js'
+    includes:
+        - 'js/_jquery.js'
+        - 'js/_bootstrap.js'
