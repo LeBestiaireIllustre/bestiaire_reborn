@@ -44,7 +44,6 @@ body {
     margin-right: auto;
     margin-left: auto;
 }
-
 %title {
     line-height: 1.05;
     padding-top: 0.4em;
@@ -87,7 +86,10 @@ a.tag {
         border-radius: 0;
     }
 }
-
+.selected {
+    background-color: black;
+    color: white;
+}
 header.site-header {
     a {
         height: 0;

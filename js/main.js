@@ -31,7 +31,12 @@ function toggle_sidebar() {
     }
 }
 
-
+function mark_selected_menu_item() {
+    var selectedId = '#' + $('span.page-marker').data('menu-item');
+    $(selectedId).addClass('selected');
+    //WARNING hard coded style!!!
+    $(selectedId + ' a').css({'color': 'white'});
+}
 
 $(document).ready(function () {
     $('#menu-button').click(function (){
@@ -48,4 +53,5 @@ $(document).ready(function () {
                 $('#mobile-overlay').hide();
             });    
     toggle_sidebar();
+    mark_selected_menu_item();
 });
