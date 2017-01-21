@@ -90,6 +90,22 @@ a.tag {
     background-color: black;
     color: white;
 }
+button#scroll-top {
+    position: fixed;
+    z-index: 4;
+    bottom: 1vw;
+    right: 22vw;
+    background-color: transparent;
+    border: none;
+    span {
+        font-size: $h4-size;
+    }
+    @include on-mobile() {
+        bottom: 1vw;
+        right: 1vw;
+        color: rgba(0, 0, 0, 0.8);
+    }
+}
 header.site-header {
     a {
         height: 0;

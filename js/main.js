@@ -37,8 +37,26 @@ function mark_selected_menu_item() {
     //WARNING hard coded style!!!
     $(selectedId + ' a').css({'color': 'white'});
 }
-
+function short_content() {
+    var docHeight = $(document).height();
+    var screenHeight = screen.height;
+    return (docHeight / screenHeight) < 2.5;
+}
+function inViews(views) {
+    var selected = $('span.page-marker').data('menu-item');
+    console.log(selected);
+    return views.includes(selected);
+}
 $(document).ready(function () {
+    $('button#scroll-top').click(function(){
+        $('body,html').animate({
+                          scrollTop: 0
+                        }, 1000);
+        return false;
+    });
+    if (short_content() || inViews(['bestiaire', 'about'])) {
+        $('button#scroll-top').hide();
+    }
     $('#menu-button').click(function (){
         show_menu();
     });
