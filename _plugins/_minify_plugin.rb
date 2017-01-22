@@ -30,11 +30,47 @@ module Jekyll
             IO.write('_site/js/main.js', contents.join(''))    
         end
     end
+    module ImageCompress 
+        require 'image_optimizer'
+        require 'fastimage_resize'
+
+        def self.get_height(size, width)
+            if self.portrait?(size)
+                ratio = size[0] / size[1]
+                return width * ratio
+            else
+                ratio = size[1] / size[0]
+                return width * ratio
+            end
+        end
+        def self.portrait?(size)
+            # width < height
+            return size[0] < size[1]
+        end
+        def self.resize?(image_path)
+            return (image_path.include?('assets/') or image_path.include?('images/bestiaire'))
+        end
+        def self.resize(image)
+            target_width = 520
+            size = FastImage.size(image)
+            if (size[0] > target_width) and (self.resize?(image))
+                FastImage.resize(image, target_width, self.get_height(size, target_width), :outfile => image)
+            end
+        end
+        
+        def self.optimize(site)
+            images = %x[find _site/ -iname '*.jpg'].split("\n")
+            images.push(*(%x[find _site/ -iname '*.png'].split("\n")))
+            for image in images
+                self.resize(image)
+                ImageOptimizer.new(image).optimize 
+            end
+        end
+    end
 end
 
 Jekyll::Hooks.register :site, :post_write do |site|
-    if site.config['minification']
-        Jekyll::CustomHtmlMinifier::minify_html(site)
-        Jekyll::JsMinifier::uglify_javascript(site)
-    end
+    Jekyll::CustomHtmlMinifier::minify_html(site)
+    Jekyll::JsMinifier::uglify_javascript(site)
+    Jekyll::ImageCompress::optimize(site)
 end

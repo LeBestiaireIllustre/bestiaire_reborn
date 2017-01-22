@@ -16,10 +16,11 @@ markdown: kramdown
 gem:
     - html_press
     - uglifier
+    - image_optimizer
+    - fastimage_resize
 sass:
     style: compressed
 
-minification: true
 
 js_minifier:
     main: 'js/main.js'
