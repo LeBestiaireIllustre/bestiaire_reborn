@@ -14,9 +14,12 @@ url: "" # the base hostname & protocol for your site
 # Build settings
 markdown: kramdown
 gem:
+    - html_press
     - uglifier
 sass:
     style: compressed
+
+minification: true
 
 js_minifier:
     main: 'js/main.js'
