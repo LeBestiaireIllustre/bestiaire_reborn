@@ -72,5 +72,4 @@ end
 Jekyll::Hooks.register :site, :post_write do |site|
     Jekyll::CustomHtmlMinifier::minify_html(site)
     Jekyll::JsMinifier::uglify_javascript(site)
-    Jekyll::ImageCompress::optimize(site)
 end
