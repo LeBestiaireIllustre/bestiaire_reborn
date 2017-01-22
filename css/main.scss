@@ -97,6 +97,9 @@ button#scroll-top {
     right: 22vw;
     background-color: transparent;
     border: none;
+    &:focus { 
+        outline: none; 
+    }
     span {
         font-size: $h4-size;
     }

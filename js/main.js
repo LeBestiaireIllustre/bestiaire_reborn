@@ -21,7 +21,6 @@ function isMobile() {
 }
 
 function make_side_panel() {
-
     $('#mobile-menu-container').append($('#site-nav'));    
     $('#mobile-menu-container').append($('#side-bar'));    
     $('nav#site-nav').show();
