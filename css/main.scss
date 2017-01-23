@@ -7,9 +7,7 @@
 $mobile-min-width: 320px;
 $mobile-max-width: 640px;
 $default-font-size: 16px;
-$default-color: black;
 
-$overlay-color: rgba(0, 0, 0, 0.8);
 
 $typo-multiplier: 1.333;
 
@@ -17,6 +15,12 @@ $h4_size: 1em * $typo-multiplier;
 $h3_size: $h4-size * $typo-multiplier;
 $h2_size: $h3-size * $typo-multiplier;
 $h1_size: $h2-size * $typo-multiplier;
+
+$site-color-1: black;
+$site-color-2: white;
+$site-color-3: grey;
+
+$overlay-color: rgba(0, 0, 0, 0.8);
 
 $default-font: 'Open Sans', 'Sans Serif';
 $menu-font: 'Abel', 'Sans Serif';
@@ -40,13 +44,13 @@ $article-img-width: 80%;
 @import 'reset.scss';
 
 body {
-    color: $default-color;
+    color: $site-color-1;
     overflow-x: hidden;
 }
 
 .selected {
-    background-color: black;
-    color: white;
+    background-color: $site-color-1;
+    color: $site-color-2;
 }
 
 //Fix for the y overflow issue
@@ -88,14 +92,14 @@ a.tag {
 
     text-decoration:none;
     &:hover span {
-        background-color: grey;
+        background-color: $site-color-3;
     }
     h4 {
         display: inline-block;
         font-size: 1em;
     }
     span {
-        background-color: black;
+        background-color: $site-color-1;
         font-family: $default-font;
         border-radius: 0;
     }
@@ -135,7 +139,7 @@ header.site-header {
             display: none;
         }
         text-align: center;
-        background-color: grey;
+        background-color: $site-color-3;
         //WARNING it seems that the header image as a white stripe at the bottom
         margin-top: -0.2em;
         ul {
@@ -145,13 +149,13 @@ header.site-header {
                 a {
                     font-family: $menu-font;
                     font-size: $h4-size;
-                    color: $default-color;
+                    color: $site-color-1;
                     text-decoration: none;
                 }
                 &:hover {
-                    background-color: black;
+                    background-color: $site-color-1;
                     a {
-                        color: white;
+                        color: $site-color-2;
                     }
                 }
             }
@@ -166,8 +170,8 @@ div.page-content {
 %headline {
     font-family: $menu-font;
     text-align: center;
-    background-color: black;
-    color: white;
+    background-color: $site-color-1;
+    color: $site-color-2;
 }
 
 h1.category-headline {
@@ -196,7 +200,7 @@ div#side-bar {
 footer.site-footer {
     padding: 2em;
     text-align: center;
-    background-color: grey;
+    background-color: $site-color-3;
     background-image: url('../images/brick-wall-dark.png');
     a, p {
         font-family: $menu-font;
@@ -218,9 +222,9 @@ div.archives {
             padding-bottom: 0.5em;
             a {
                 text-decoration: none;
-                color: black;
+                color: $site-color-1;
                 &:hover {
-                    color: grey;
+                    color: $site-color-3;
                 }
                 h2 {
                     padding: 0.1em;
@@ -242,15 +246,15 @@ article.post {
     padding-bottom: 2vw;
     header.post-header {
         a {
-            color: black;
+            color: $site-color-1;
             text-decoration: none;
             .post-title {
                 font-family: $headline-font;
                 padding-bottom: 0;
-                border-bottom: 2px solid black;
+                border-bottom: 2px solid $site-color-1;
             }
             &:hover {
-                color: grey;
+                color: $site-color-3;
             }
         }
         p.post-meta {
@@ -335,15 +339,15 @@ article.post {
             }
         }
         audio {
-            background-color: black;
+            background-color: $site-color-1;
         }
     }
     footer.post-footer {
-        background-color: black;
-        color: white;
+        background-color: $site-color-1;
+        color: $site-color-2;
         padding: 1em;
         a {
-            color: grey;
+            color: $site-color-3;
         }
         div {
             text-align: center;
