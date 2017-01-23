@@ -8,6 +8,7 @@ $mobile-min-width: 320px;
 $mobile-max-width: 640px;
 $default-font-size: 16px;
 $default-color: black;
+
 $overlay-color: rgba(0, 0, 0, 0.8);
 
 $typo-multiplier: 1.333;
@@ -17,12 +18,18 @@ $h3_size: $h4-size * $typo-multiplier;
 $h2_size: $h3-size * $typo-multiplier;
 $h1_size: $h2-size * $typo-multiplier;
 
-$default-font: 'Open Sans';
-$menu-font: 'Abel';
-$about-font: 'Helvetica';
-$bestiaire-hovering-text-font: 'Abel';
-$title-font: 'PT Sans Narrow';
-$headline-font: 'Anton';
+$default-font: 'Open Sans', 'Sans Serif';
+$menu-font: 'Abel', 'Sans Serif';
+$about-font: $default-font;
+$bestiaire-hovering-text-font: $menu-font;
+$title-font: 'PT Sans Narrow', 'Sans Serif';
+$headline-font: 'Anton', 'Sans Serif';
+
+$caption-font: 'PT Sans Narrow', 'Sans Serif';
+$blockquote-font: 'Times New Roman', 'georgia', 'serif';
+$copy-font: $default-font;
+
+$article-img-width: 80%;
 
 @mixin on-mobile() {
     @media screen and (min-width: $mobile-min-width) and (max-width: $mobile-max-width) {
@@ -31,9 +38,15 @@ $headline-font: 'Anton';
 }
 
 @import 'reset.scss';
+
 body {
     color: $default-color;
     overflow-x: hidden;
+}
+
+.selected {
+    background-color: black;
+    color: white;
 }
 
 //Fix for the y overflow issue
@@ -44,6 +57,7 @@ body {
     margin-right: auto;
     margin-left: auto;
 }
+
 %title {
     line-height: 1.05;
     padding-top: 0.4em;
@@ -86,10 +100,9 @@ a.tag {
         border-radius: 0;
     }
 }
-.selected {
-    background-color: black;
-    color: white;
-}
+
+
+
 button#scroll-top {
     position: fixed;
     z-index: 4;
@@ -149,18 +162,22 @@ div.page-content {
     padding-top: 1vw;
     padding-bottom: 1vw;
 }
+
 %headline {
     font-family: $menu-font;
     text-align: center;
     background-color: black;
     color: white;
 }
+
 h1.category-headline {
     @extend %headline;
 }
+
 h1.tag-headline {
     @extend %headline;
 }
+
 div#side-bar {
     * {
         text-align: center;
@@ -221,10 +238,6 @@ div.archives {
 div.tags-page {
     padding-top: 1em;
 }
-$caption-font: 'PT Sans Narrow';
-$blockquote-font: 'Times New Roman';
-$copy-font: 'Open Sans';
-$article-img-width: 80%;
 article.post {
     padding-bottom: 2vw;
     header.post-header {
