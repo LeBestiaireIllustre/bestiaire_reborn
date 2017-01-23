@@ -18,7 +18,8 @@ $h1_size: $h2-size * $typo-multiplier;
 
 $site-color-1: black;
 $site-color-2: white;
-$site-color-3: grey;
+$site-color-3: #ED5A8B;
+$site-copy-color: black;
 
 $overlay-color: rgba(0, 0, 0, 0.8);
 
@@ -44,7 +45,7 @@ $article-img-width: 80%;
 @import 'reset.scss';
 
 body {
-    color: $site-color-1;
+    color: $site-copy-color;
     overflow-x: hidden;
 }
 
@@ -149,7 +150,7 @@ header.site-header {
                 a {
                     font-family: $menu-font;
                     font-size: $h4-size;
-                    color: $site-color-1;
+                    color: $site-copy-color;
                     text-decoration: none;
                 }
                 &:hover {
@@ -222,7 +223,7 @@ div.archives {
             padding-bottom: 0.5em;
             a {
                 text-decoration: none;
-                color: $site-color-1;
+                color: $site-copy-color;
                 &:hover {
                     color: $site-color-3;
                 }
@@ -246,7 +247,7 @@ article.post {
     padding-bottom: 2vw;
     header.post-header {
         a {
-            color: $site-color-1;
+            color: $site-copy-color;
             text-decoration: none;
             .post-title {
                 font-family: $headline-font;
