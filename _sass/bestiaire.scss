@@ -1,5 +1,7 @@
 div.bestiaire {
-    overflow-x: hidden;
+    @include on-mobile() {
+        overflow-x: hidden;
+    }
     * {
         margin: 0;
         padding: 0;
