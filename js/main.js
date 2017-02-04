@@ -70,7 +70,8 @@ $(document).ready(function () {
             }, 
             function(){
                 $('#mobile-overlay').hide();
-            });    
+            }
+    );
     toggle_sidebar();
     mark_selected_menu_item();
 });

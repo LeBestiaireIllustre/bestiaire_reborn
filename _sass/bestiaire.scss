@@ -16,6 +16,7 @@ div.bestiaire {
                 &:hover {
                     transform: scale(1.25);
                     z-index: 15;
+                    position: relative;
                 }
             }
             &:hover + div.hovering-text {

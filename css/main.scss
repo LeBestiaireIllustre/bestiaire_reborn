@@ -253,6 +253,7 @@ article.post {
                 font-family: $headline-font;
                 padding-bottom: 0;
                 border-bottom: 2px solid $site-color-1;
+                text-transform: uppercase;
             }
             &:hover {
                 color: $site-color-3;
