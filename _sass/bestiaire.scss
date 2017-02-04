@@ -8,10 +8,13 @@ div.bestiaire {
         border: none;
     }
     div.image-container {
+        pointer-events: none;
         position: relative;
         width: 250%;
         a.bestiaire-link {
+            pointer-events: none;
             img.bestiaire-image {
+                pointer-events: all;
                 display: block;
                 max-width: 42%;
                 background-color: white;
@@ -55,6 +58,7 @@ div.bestiaire {
             }
         }
         div.modal {
+            pointer-events: all;
             * {
                 border-radius: 0;
             }
