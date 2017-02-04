@@ -147,16 +147,17 @@ header.site-header {
             li {
                 display: inline-block;
                 margin-right: -4px; 
-                padding: 1em;
-                a {
+                button {
                     font-family: $menu-font;
                     font-size: $h4-size;
                     color: $site-copy-color;
-                    text-decoration: none;
+                    padding: 1em;
+                    border: 0;
+                    background-color: transparent;
                 }
                 &:hover {
                     background-color: $site-color-1;
-                    a {
+                    button {
                         color: $site-color-2;
                     }
                 }

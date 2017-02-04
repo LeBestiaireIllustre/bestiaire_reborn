@@ -36,7 +36,7 @@ function mark_selected_menu_item() {
     var selectedId = '#' + $('span.page-marker').data('menu-item');
     $(selectedId).addClass('selected');
     //WARNING hard coded style!!!
-    $(selectedId + ' a').css({'color': 'white'});
+    $(selectedId + ' button').css({'color': 'white'});
 }
 function short_content() {
     var docHeight = $(document).height();
