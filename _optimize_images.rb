@@ -35,7 +35,7 @@ module ImageCompress
         images.reject! { |img| img.include?('_site')}
         for image in images
             self.resize(image)
-            ImageOptimizer.new(image).optimize 
+            ImageOptimizer.new(image, quality: 65, level: 9).optimize 
         end
     end
 end
