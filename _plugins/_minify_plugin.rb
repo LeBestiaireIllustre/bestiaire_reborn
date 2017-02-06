@@ -2,7 +2,7 @@ module Jekyll
     module CustomHtmlMinifier
         require 'html_press'
         def self.minify_html(site)
-            html_paths = %x[find _site/ -iname '*.html'].split("\n")
+            html_paths = Dir.glob('_site/**/*.html')
             contents = html_paths.map {|p| IO.read(p)}
             contents.map! {|c| HtmlPress.press(c)}
             for i in (0...html_paths.count)
@@ -25,7 +25,7 @@ module Jekyll
                 contents << IO.read(inc)
             end
             contents << IO.read(main_file)
-            #contents.map! { |c| Jekyll::JsMinifier::uglify(c)}
+            contents.map! { |c| Jekyll::JsMinifier::uglify(c)}
 
             IO.write('_site/js/main.js', contents.join(''))    
         end
@@ -33,6 +33,6 @@ module Jekyll
 end
 
 Jekyll::Hooks.register :site, :post_write do |site|
-    #Jekyll::CustomHtmlMinifier::minify_html(site)
+    Jekyll::CustomHtmlMinifier::minify_html(site)
     Jekyll::JsMinifier::uglify_javascript(site)
 end

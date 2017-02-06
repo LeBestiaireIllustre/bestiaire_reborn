@@ -28,8 +28,8 @@ module ImageCompress
     end
     
     def self.optimize()
-        images = %x[find ./ -iname '*.jpg'].split("\n")
-        images.push(*(%x[find ./ -iname '*.png'].split("\n")))
+        images = Dir.glob('./**/*.jpg')
+        images.push(*(Dir.glob('./**/*.png')))
         images.reject! { |img| img.include?('_assets')}
         images.reject! { |img| img.include?('_images')}
         images.reject! { |img| img.include?('_site')}
