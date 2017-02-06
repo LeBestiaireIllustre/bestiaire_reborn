@@ -9,6 +9,7 @@
     <div class="tags">
       {% for tag in include.post_arg.tags %}
         {% include tag_part.html tag_arg=tag %}
+        &nbsp;
       {% endfor %}
     </div>
   </header>

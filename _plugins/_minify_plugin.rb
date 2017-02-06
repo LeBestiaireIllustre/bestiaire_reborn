@@ -4,7 +4,7 @@ module Jekyll
         def self.minify_html(site)
             html_paths = Dir.glob('_site/**/*.html')
             contents = html_paths.map {|p| IO.read(p)}
-            contents.map! {|c| HtmlMinifier.minify(c, :collapseWhitespace => true, :removeComments => true)}
+            contents.map! {|c| HtmlMinifier.minify(c, :collapseWhitespace => true, :collapseInlineTagWhitespace => true, :conservativeCollapse => true, :removeComments => true)}
             for i in (0...html_paths.count)
                 IO.write(html_paths[i], contents[i]) 
             end
