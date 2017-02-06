@@ -14,10 +14,11 @@ url: "" # the base hostname & protocol for your site
 # Build settings
 markdown: kramdown
 gem:
-    - html_press
+    - html_minifier
     - uglifier
     - image_optimizer
     - fastimage_resize
+    - therubyracer 
 sass:
     style: compressed
 
