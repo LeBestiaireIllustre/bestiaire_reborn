@@ -1,5 +1,5 @@
 {% assign date_arg = include.date_arg %}
-<span class="glyphicon glyphicon-time"></span>
+<span class="glyphicon glyphicon-time"></span>&nbsp;&nbsp;
 <time class="article-date" datetime="{{ date_arg | date_to_xmlschema }}" itemprop="datePublished">
           {{ date_arg | date: "%d-%m-%Y" | to_french_date }}
 </time>
