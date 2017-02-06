@@ -25,7 +25,7 @@ module Jekyll
                 contents << IO.read(inc)
             end
             contents << IO.read(main_file)
-            contents.map! { |c| Jekyll::JsMinifier::uglify(c)}
+            #contents.map! { |c| Jekyll::JsMinifier::uglify(c)}
 
             IO.write('_site/js/main.js', contents.join(''))    
         end
@@ -33,6 +33,6 @@ module Jekyll
 end
 
 Jekyll::Hooks.register :site, :post_write do |site|
-    Jekyll::CustomHtmlMinifier::minify_html(site)
+    #Jekyll::CustomHtmlMinifier::minify_html(site)
     Jekyll::JsMinifier::uglify_javascript(site)
 end
