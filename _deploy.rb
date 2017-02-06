@@ -37,13 +37,13 @@ begin
     write_domain_name(abs_path('_config.yml'))
     system('jekyll', 'clean', out: $stdout, err: :out)
     system('jekyll', 'build', out: $stdout, err: :out)
-    remove_old_site(abs_path('../LeBestiaireIllustre.github.io'))
-    copy_new_site(abs_path('_site'), abs_path('../LeBestiaireIllustre.github.io'))
-    Dir.chdir abs_path('../LeBestiaireIllustre.github.io')
+    remove_old_site(abs_path('_deployment/LeBestiaireIllustre.github.io'))
+    copy_new_site(abs_path('_site'), abs_path('_deployment/LeBestiaireIllustre.github.io'))
+    Dir.chdir abs_path('_deployment/LeBestiaireIllustre.github.io')
     system('git', 'add', '.', out: $stdout, err: :out)
     system('git', 'commit', '-m', "Deploy at #{Time.now.to_i}", out: $stdout, err: :out)
     system('git', 'push', 'origin', 'master', out: $stdout, err: :out)
 ensure
-    Dir.chdir abs_path('../bestiaire_reborn')
+    Dir.chdir abs_path('../../')
     remove_domain_name(abs_path('_config.yml'))
 end
