@@ -1,7 +1,7 @@
 #!/usr/bin/ruby
 require 'fileutils'
 BASE_URL = 'http://www.lebestiaireillustre.com'
-BASE_PATH = '/home/chedy/blog_adel/bestiaire_reborn'
+BASE_PATH = '~/bestiaire_reborn'
 def abs_path(path)
     return "#{BASE_PATH}/#{path}"
 end
