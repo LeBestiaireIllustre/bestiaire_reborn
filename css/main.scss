@@ -112,7 +112,7 @@ button#scroll-top {
     position: fixed;
     z-index: 4;
     bottom: 1vw;
-    right: 22vw;
+    right: 1vw;
     background-color: transparent;
     border: none;
     &:focus { 
@@ -122,8 +122,6 @@ button#scroll-top {
         font-size: $h4-size;
     }
     @include on-mobile() {
-        bottom: 1vw;
-        right: 1vw;
         color: rgba(0, 0, 0, 0.8);
     }
 }
