@@ -336,12 +336,19 @@ article.post {
                 }
             } 
         }
-        .element-caption-portrait {
-            float: right;
+        %element-caption-portrait {
             max-width: 58%;
             @include on-mobile() {
                 max-width: 100%;
             }
+        }
+        .element-caption-portrait-right {
+            @extend %element-caption-portrait;
+            float: right;
+        }
+        .element-caption-portrait-left {
+            @extend %element-caption-portrait;
+            float: left;
         }
         audio {
             background-color: $site-color-1;
