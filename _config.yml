@@ -22,8 +22,8 @@ gem:
     - therubyracer 
 sass:
     style: compressed
-
-
+exclude:
+    - "*.bak"
 js_minifier:
     main: 'js/main.js'
     includes:
