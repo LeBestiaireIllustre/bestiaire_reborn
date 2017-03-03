@@ -2,7 +2,6 @@
 require 'fileutils'
 BASE_URL = 'http://www.lebestiaireillustre.com'
 BASE_PATH = File.expand_path(File.dirname(__FILE__))
-#BASE_PATH = '/home/chedy/blog_adel/bestiaire_reborn'
 def abs_path(path)
     return "#{BASE_PATH}/#{path}"
 end
@@ -34,6 +33,7 @@ def copy_new_site(src, dest)
         puts "#{f} copied"
     end
 end
+
 begin
     write_domain_name(abs_path('_config.yml'))
     system('jekyll', 'clean', out: $stdout, err: :out)
@@ -44,8 +44,8 @@ begin
     Dir.chdir abs_path('_deployment/LeBestiaireIllustre.github.io')
     system('git', 'add', '.', out: $stdout, err: :out)
     system('git', 'commit', '-m', "Deploy at #{Time.now.to_i}", out: $stdout, err: :out)
-    system('git', 'pull', '-s', 'recursive', '-X', 'ours',  'origin', "master", '--no-edit',  out: $stdout, err: :out)
-    system('git', 'push', 'origin', 'master', out: $stdout, err: :out)
+    #system('git', 'pull', '-s', 'recursive', '-X', 'ours',  'origin', "master", '--no-edit',  out: $stdout, err: :out)
+    system('git', 'push', 'origin', 'master', '--force', out: $stdout, err: :out)
 ensure
     Dir.chdir BASE_PATH
     remove_domain_name(abs_path('_config.yml'))
