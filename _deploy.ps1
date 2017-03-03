@@ -82,5 +82,5 @@ if ($agent -eq 0) {
 } else {
     Write-Host "SSH agent is running (PID $agent)"
 }
-
+chcp 65001
 ruby _deploy.rb
