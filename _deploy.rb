@@ -44,7 +44,7 @@ begin
     Dir.chdir abs_path('_deployment/LeBestiaireIllustre.github.io')
     system('git', 'add', '.', out: $stdout, err: :out)
     system('git', 'commit', '-m', "Deploy at #{Time.now.to_i}", out: $stdout, err: :out)
-    system('git', 'pull', '-s', 'recursive', '-X', 'ours',  'origin', "master", out: $stdout, err: :out)
+    system('git', 'pull', '-s', 'recursive', '-X', 'ours',  'origin', "master", '--no-edit',  out: $stdout, err: :out)
     system('git', 'push', 'origin', 'master', out: $stdout, err: :out)
 ensure
     Dir.chdir BASE_PATH
