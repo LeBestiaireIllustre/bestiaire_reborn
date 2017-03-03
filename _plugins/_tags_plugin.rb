@@ -2,6 +2,10 @@ module Jekyll
   
   module UrlFriendlyFilter
     def self.to_url_friendly(tagname)
+      tagname = tagname.gsub(/[éèê]/, 'e')
+      tagname = tagname.gsub(/[àâ]/, 'a')
+      tagname = tagname.gsub(/[î]/, 'i')
+      tagname = tagname.gsub(/[ç]/, 'c')
       return tagname.gsub(' ', '_')
     end
     def to_url(tagname)
