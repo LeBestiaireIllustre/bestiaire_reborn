@@ -2,7 +2,7 @@ module Jekyll
     module CustomHtmlMinifier
         require 'html_minifier'
         def self.minify_html(site)
-            html_paths = Dir.glob('_site/**/*.html')
+            html_paths = Dir.glob("#{site.dest}/**/*.html")
             contents = html_paths.map {|p| IO.read(p)}
             contents.map! {|c| HtmlMinifier.minify(c, :collapseWhitespace => true, :conservativeCollapse => true, :removeComments => true)}
             for i in (0...html_paths.count)
@@ -18,8 +18,9 @@ module Jekyll
         
         # config in _config.yml
         def self.uglify_javascript(site)
-            main_file = site.config['js_minifier']['main']
+            main_file = "#{site.source}/#{site.config['js_minifier']['main']}"
             includes = site.config['js_minifier']['includes']
+            includes.map! { |path| "#{site.source}/#{path}"} 
             contents = []
             for inc in includes
                 contents << IO.read(inc)
@@ -27,7 +28,7 @@ module Jekyll
             contents << IO.read(main_file)
             contents.map! { |c| Jekyll::JsMinifier::uglify(c)}
 
-            IO.write('_site/js/main.js', contents.join(''))    
+            IO.write("#{site.dest}/js/main.js", contents.join(''))    
         end
     end
 end
