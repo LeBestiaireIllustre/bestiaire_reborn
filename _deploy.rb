@@ -37,7 +37,6 @@ end
 begin
     write_domain_name(abs_path('_config.yml'))
     system('jekyll', 'clean', out: $stdout, err: :out)
-    puts('STEP 1')
     system('jekyll', 'build', out: $stdout, err: :out)
     puts('STEP 2')
     remove_old_site(abs_path('_deployment/LeBestiaireIllustre.github.io'))
