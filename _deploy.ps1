@@ -84,5 +84,5 @@ if ($agent -eq 0) {
 }
 chcp 65001
 Write-Output "STEP 1"
-ruby _deploy.rb
+ruby "$PSScriptRoot\_deploy.rb"
 Write-Output "===================================="

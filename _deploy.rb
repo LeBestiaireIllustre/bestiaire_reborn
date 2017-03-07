@@ -35,6 +35,7 @@ def copy_new_site(src, dest)
 end
 
 begin
+    Dir.chdir BASE_PATH
     write_domain_name(abs_path('_config.yml'))
     system('jekyll', 'clean', out: $stdout, err: :out)
     system('jekyll', 'build', out: $stdout, err: :out)
@@ -46,7 +47,6 @@ begin
     system('git', 'add', '.', out: $stdout, err: :out)
     system('git', 'commit', '-m', "Deploy at #{Time.now.to_i}", out: $stdout, err: :out)
     puts('STEP 4')
-    #system('git', 'pull', '-s', 'recursive', '-X', 'ours',  'origin', "master", '--no-edit',  out: $stdout, err: :out)
     system('git', 'push', 'origin', 'master', '--force', out: $stdout, err: :out)
     puts('STEP 5')
 ensure
