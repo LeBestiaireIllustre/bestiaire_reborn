@@ -20,6 +20,9 @@ gem:
     - image_optimizer
     - fastimage_resize
     - therubyracer 
+kramdown:
+    enable_coderay: false
+    syntax_highlighter: null
 sass:
     style: compressed
 exclude:

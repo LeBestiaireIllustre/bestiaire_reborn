@@ -15,7 +15,7 @@
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    {{ include.post_arg.content }}
+    {{ include.post_arg.content | markdownify }}
   </div>
   
   <footer class="post-footer">
