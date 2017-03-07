@@ -12,15 +12,21 @@ module Jekyll
     end
     module JsMinifier
         require 'uglifier'
+        def self.get_explicit_path(basepath, relative_path)
+            if relative_path.start_with?(basepath)
+                return relative_path
+            end
+            return "#{basepath}/#{relative_path}" 
+        end
         def self.uglify(content)
             return Uglifier.compile(content)
         end
         
         # config in _config.yml
         def self.uglify_javascript(site)
-            main_file = "#{site.source}/#{site.config['js_minifier']['main']}"
+            main_file = self.get_explicit_path(site.source, site.config['js_minifier']['main'])
             includes = site.config['js_minifier']['includes']
-            includes.map! { |path| "#{site.source}/#{path}"} 
+            includes.map! { |path| self.get_explicit_path(site.source, path)} 
             contents = []
             for inc in includes
                 contents << IO.read(inc)
