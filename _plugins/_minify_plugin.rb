@@ -23,7 +23,7 @@ module Jekyll
         end
         
         # config in _config.yml
-        def self.uglify_javascript(site)
+        def self.uglify_javascript(site, optimize)
             main_file = self.get_explicit_path(site.source, site.config['js_minifier']['main'])
             includes = site.config['js_minifier']['includes']
             includes.map! { |path| self.get_explicit_path(site.source, path)} 
@@ -32,7 +32,9 @@ module Jekyll
                 contents << IO.read(inc)
             end
             contents << IO.read(main_file)
-            contents.map! { |c| Jekyll::JsMinifier::uglify(c)}
+            if optimize
+                contents.map! { |c| Jekyll::JsMinifier::uglify(c)}
+            end
 
             IO.write("#{site.dest}/js/main.js", contents.join(''))    
         end
@@ -40,6 +42,8 @@ module Jekyll
 end
 
 Jekyll::Hooks.register :site, :post_write do |site|
-    Jekyll::CustomHtmlMinifier::minify_html(site)
-    Jekyll::JsMinifier::uglify_javascript(site)
+    if site.config['optimize_assets']
+        Jekyll::CustomHtmlMinifier::minify_html(site)
+    end
+    Jekyll::JsMinifier::uglify_javascript(site, site.config['optimize_assets'])
 end
