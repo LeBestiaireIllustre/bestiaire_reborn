@@ -59,5 +59,9 @@ module Deploy
 end
 
 if __FILE__ == $0
+    #
+    # This allows to have realtime puts output when running from c# program
+    #
+    $stdout.sync = true
     Deploy::deploy()
 end
