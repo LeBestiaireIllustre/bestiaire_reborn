@@ -72,7 +72,6 @@ function Stop-SshAgent() {
 function Add-SshKey() {
     ssh-add 
 }
-Write-Output "------------------------------------"
 # Start the agent if not already running; provide feedback
 $agent = Get-SshAgent
 if ($agent -eq 0) {
@@ -82,7 +81,3 @@ if ($agent -eq 0) {
 } else {
     Write-Host "SSH agent is running (PID $agent)"
 }
-chcp 65001
-Write-Output "STEP 1"
-ruby "$PSScriptRoot\_deploy.rb"
-Write-Output "===================================="

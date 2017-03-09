@@ -24,7 +24,7 @@ sass:
     style: compressed
 exclude:
     - "*.bak"
-    - "Deploy.rb"
+    - "deploy.rb"
 js_minifier:
     main: 'js/main.js'
     includes:
