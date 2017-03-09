@@ -7,6 +7,7 @@ module Jekyll
       tagname = tagname.gsub(/[î]/, 'i')
       tagname = tagname.gsub(/[ç]/, 'c')
       tagname = tagname.gsub(/[ù]/, 'u')
+      tagname = tagname.gsub(/&[#a-zA-Z0-9]+;/, ' ')
       return tagname.gsub(' ', '_')
     end
     def to_url(tagname)
