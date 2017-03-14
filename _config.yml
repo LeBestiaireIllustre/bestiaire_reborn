@@ -17,9 +17,8 @@ markdown: kramdown
 gem:
     - html_minifier
     - uglifier
-    - image_optimizer
-    - fastimage_resize
-    - therubyracer 
+    - therubyracer
+    - wdm  
 sass:
     style: compressed
 exclude:
