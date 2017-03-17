@@ -19,9 +19,16 @@
   </div>
   
   <footer class="post-footer">
-    <!--{{ include.post_arg.suggested | first }}-->
     <div>
-      Si vous avez aimez cette article peut-être<a href="#!">"article suggeré"</a>
+      Si vous avez aimez cette article, le gros membre du comité de visionage vous suggére:&nbsp; 
+      {% for suggestedId in include.post_arg.suggested %}
+        {% assign suggested_post = (site.posts | get_article_by_id: suggestedId) %}
+        <a href="{{ site.url }}{{ suggested_post.url }}">{{ suggested_post.title }}</a>
+        {% assign lastId = (include.post_arg.suggested | last ) %}
+        {% if suggestedId != lastId %}
+          &nbsp;~&nbsp;
+        {% endif %}
+      {% endfor %}
     </div>
     <div>
       <span class="glyphicon glyphicon-heart"></span>
