@@ -21,10 +21,11 @@
   <footer class="post-footer">
     <div>
       Si vous avez aimez cette article, le gros membre du comité de visionage vous suggére:&nbsp; 
-      {% for suggestedId in include.post_arg.suggested %}
+      {% assign suggestedArticles = (include.post_arg.suggested | get_random_if_empty: site.posts ) %}
+      {% for suggestedId in suggestedArticles %}
         {% assign suggested_post = (site.posts | get_article_by_id: suggestedId) %}
         <a href="{{ site.url }}{{ suggested_post.url }}">{{ suggested_post.title }}</a>
-        {% assign lastId = (include.post_arg.suggested | last ) %}
+        {% assign lastId = (suggestedArticles | last ) %}
         {% if suggestedId != lastId %}
           &nbsp;~&nbsp;
         {% endif %}
