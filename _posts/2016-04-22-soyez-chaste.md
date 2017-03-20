@@ -6,7 +6,7 @@ date:   2016-04-22
 categories: article
 tags: 
 - white
-custom-categories: LesSousFiffresDelArtiste
+custom-categories: LesSousFiffresDeLArtiste
 suggested: [1,2,3]
 ---
 {%for suggestion in post.tags%}
