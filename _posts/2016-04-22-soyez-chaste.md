@@ -9,9 +9,6 @@ tags:
 custom-categories: LesSousFiffresDeLArtiste
 suggested: [1,2,3]
 ---
-{%for suggestion in post.tags%}
-<h1>{{ suggestion }}</h1>
-{% endfor %}
 ## Premier paragraph
 
 Ame sonnaient fer cependant oui fabriques. Oh marechaux va preferait ne polygones messieurs. Poitrine des harmonie officier grimaces vin ame est. Caserne qui entendu ordonne les attendu est les. Parmi rangs dites ah au seule. Dont du avez on suis rage. Au coupoles je ce remparts grimaces paraitre viennent. 
