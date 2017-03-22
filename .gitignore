@@ -9,8 +9,8 @@ images/**/*
 assets/*
 assets/**/*
 
-data/*
-data/**/*
+_data/*
+_data/**/*
 
 _posts/*
 _posts/**/*
