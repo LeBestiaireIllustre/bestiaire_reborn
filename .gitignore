@@ -3,3 +3,14 @@ _site
 .jekyll-metadata
 *.swp
 _deployment/**/*
+images/*
+images/**/*
+
+assets/*
+assets/**/*
+
+data/*
+data/**/*
+
+_posts/*
+_posts/**/*
