@@ -1,9 +1,5 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'jekyll serve'. If you change this file, please restart the server process.
+#Copyright (c) Chedy Missaoui All rights reserved.
+#Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information.
 
 # Site settings
 title: Le bestiaire illustré trop bien
